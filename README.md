@@ -6,3 +6,36 @@ Figured out next steps and what to complete for next class. Started looking at t
 
 # September 14
 Tried pulling data from Common Crawl, but were not yet successful. Added to the literature review. Allocated proposal paper sections with the intention to be done with a first draft of the proposal by next class. 
+
+## Installation
+
+In order to set up the necessary environment:
+
+1. If [conda] is not yet installed, follow the [installation guide] for your operating system.
+   > Note: [miniconda] or [mamba] are faster options
+2. From the projects root directory create the environment with:
+   ```
+   conda env create -f environment.yml
+   ```
+3. Activate the new environment with:
+   ```
+   conda activate whatsincc
+   ```
+   > Note: The environment should always be activated before working on this project
+#### Troubleshoot
+- Make sure to restart your terminal after installing conda. Or run ```source ~/.bashrc```
+- If ```conda activate``` fails, try ```conda init``` and then ```conda activate``` again
+
+
+## Dependency Management & Reproducibility
+
+1. Create concrete dependencies as `environment.lock.yml` for the exact reproduction of your
+   environment with:
+   ```bash
+   conda env export -n we_get_it_right -f environment.lock.yml
+   ```
+   For multi-OS development, consider using `--no-builds` during the export.
+3. Update your current environment with respect to a new `environment.lock.yml` using:
+   ```bash
+   conda env update -f environment.lock.yml --prune
+   ```
