@@ -32,10 +32,15 @@ In order to set up the necessary environment:
 1. Create concrete dependencies as `environment.lock.yml` for the exact reproduction of your
    environment with:
    ```bash
-   conda env export -n we_get_it_right -f environment.lock.yml
+   conda env export -n whatsincc -f environment.lock.yml
    ```
    For multi-OS development, consider using `--no-builds` during the export.
 3. Update your current environment with respect to a new `environment.lock.yml` using:
    ```bash
    conda env update -f environment.lock.yml --prune
    ```
+
+[conda]: https://docs.conda.io/
+[installation guide]: https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html
+[miniconda]: https://docs.conda.io/en/latest/miniconda.html
+[mamba]: https://mamba.readthedocs.io/en/latest/installation.html#installation
