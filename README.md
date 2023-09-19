@@ -6,3 +6,6 @@ Figured out next steps and what to complete for next class. Started looking at t
 
 # September 14
 Tried pulling data from Common Crawl, but were not yet successful. Added to the literature review. Allocated proposal paper sections with the intention to be done with a first draft of the proposal by next class. 
+
+# September 19
+Started the proposal presentation and assigned slides. Still need to edit the paper and fix formating. Still have not figured out how to query Common Crawl.
