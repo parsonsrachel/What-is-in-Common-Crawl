@@ -16,5 +16,5 @@ dependencies:
   # install custom package
   - pip:
     - warcio
-    - -e .
+  #  - -e .
 
