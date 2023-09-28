@@ -9,3 +9,10 @@ Tried pulling data from Common Crawl, but were not yet successful. Added to the 
 
 # September 19
 Started the proposal presentation and assigned slides. Still need to edit the paper and fix formating. Still have not figured out how to query Common Crawl.
+
+# September 28
+Presented proposal. Notes we got back
+-[] create a filtering method based on the types of data we see
+-[] currated datasets already exist so filtering method that filters out all bad data and not just specific types would be good
+-[] try running some of the filtering methods we looked at to see what is left over from filtering and what was filtered out that maybe shouldn't have been
+-[] won't really have to worry a lot about large data storage because a few thousand is not too large
