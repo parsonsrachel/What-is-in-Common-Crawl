@@ -31,7 +31,7 @@ In order to set up the necessary environment:
 
 1. Update environment:
    ```bash
-   conda env update --file environment.yml  --pruneconda env update --prefix ./env --file environment.yml  --prune
+   conda env update --file environment.yml --prune
    ```
 
 2. Create concrete dependencies as `environment.lock.yml` for the exact reproduction of your
