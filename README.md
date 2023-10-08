@@ -29,7 +29,12 @@ In order to set up the necessary environment:
 
 ## Dependency Management & Reproducibility
 
-1. Create concrete dependencies as `environment.lock.yml` for the exact reproduction of your
+1. Update environment:
+   ```
+   conda env update --prefix ./env --file environment.yml  --pruneconda env update --prefix ./env --file environment.yml  --prune
+   ```
+
+2. Create concrete dependencies as `environment.lock.yml` for the exact reproduction of your
    environment with:
    ```bash
    conda env export -n whatsincc -f environment.lock.yml
