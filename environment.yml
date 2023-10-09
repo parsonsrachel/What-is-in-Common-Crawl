@@ -4,6 +4,7 @@ channels:
   - nodefaults
 dependencies:
   - python=3.9
+  - pip
   - numpy
   - pandas
   - matplotlib
@@ -13,9 +14,9 @@ dependencies:
   - plotly
   - black
   - pre-commit
-  # install custom package
   - pip:
     - warcio
     - beautifulsoup4
-  #  - -e .
+   # install custom package 
+   - -e .
 
