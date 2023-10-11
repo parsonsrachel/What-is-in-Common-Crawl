@@ -18,5 +18,5 @@ dependencies:
     - warcio
     - beautifulsoup4
    # install custom package 
-   - -e .
+    - -e .
 
