@@ -17,7 +17,7 @@ crawl_list = [data.text for data in crawl_list_div.find_all('div')]
 
 # Filter 'CC-MAIN-2012', 'CC-MAIN-2009-2010', and 'CC-MAIN-2008-2009'
 # as they have data in older format (.ARC instead of warc)
-arc_crawls = ['CC-MAIN-2012', 'CC-MAIN-2009-2010', 'CC-MAIN-2008-2009']
+arc_crawls = ['CC-MAIN-2012', 'CC-MAIN-2009-2010', 'CC-MAIN-2008-2009', 'CC-MAIN-2014-10']
 crawl_list_warc = [crawl for crawl in crawl_list if crawl not in arc_crawls]
 
 # Save list to file; for reading use json.load(f)
