@@ -1,14 +1,15 @@
 import gzip
+from pathlib import Path
 import os.path
 import requests
 import shutil
 
 
-def download_file(url: str, decompress: bool = False) -> str:  # TODO: os.paht
+def download_file(url: str, store_dir: Path, decompress: bool = False) -> Path:
     local_filename = url.split('/')[-1]  # e.g. "warc.paths.gz"
     local_file_dir = url.split('/')[-2]  # e.g. "CC-MAIN-2013-20"
-    local_file_dir_path = f"../data/{local_file_dir}/"  # e.g. ./data/CC-MAIN-2013-20
-    local_file_path = f"../data/{local_file_dir}/{local_filename}"  # e.g. ./data/CC-MAIN-2013-20/warc.paths.gz
+    local_file_dir_path = Path(f"{store_dir}/{local_file_dir}/")  # e.g. ./data/CC-MAIN-2013-20
+    local_file_path = Path(os.path.join(local_file_dir_path, local_filename))  # e.g. ./data/CC-MAIN-2013-20/warc.paths.gz
 
     # Check if file already exists,
     # TODO: maybe also check for matching checksum
@@ -33,17 +34,18 @@ def download_file(url: str, decompress: bool = False) -> str:  # TODO: os.paht
     return local_file_path
 
 
-def decompress_gz(gz_path: str) -> os.path:  # TODO: os.pats
+def decompress_gz(gz_path: Path) -> Path:  # TODO: os.pats
     """
     Decompresses .gz compressed file. As common crawl hosts only compressed files.
     Saves decompressed file in same path as compressed file.
     """
-    decompressed_path = os.path.splitext(gz_path)[0]
+    decompressed_path = Path(os.path.splitext(gz_path)[0])
 
     # Check if file already exists,
     # TODO: maybe also check for matching checksum
     if os.path.isfile(decompressed_path):
         return decompressed_path
+    print(gz_path)
 
     # unzip with gzip using
     # https://stackoverflow.com/questions/31028815/how-to-unzip-gz-file-using-python#44712152
