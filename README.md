@@ -17,7 +17,4 @@ Presented proposal. Notes we got back
 - try running some of the filtering methods we looked at to see what is left over from filtering and what was filtered out that maybe shouldn't have been
 - won't really have to worry a lot about large data storage because a few thousand is not too large
 
-# Connecting to AWS
-```
-ssh -i "rachelkey.pem" ec2-user@ec2-3-15-179-239.us-east-2.compute.amazonaws.com
-```
+
