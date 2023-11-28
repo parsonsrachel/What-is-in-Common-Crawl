@@ -16,6 +16,7 @@ dependencies:
   - pre-commit
   - pip:
     - google-cloud-language
+    - tiktoken
     - datasets
     - openai
     - warcio
