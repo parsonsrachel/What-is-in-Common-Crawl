@@ -1,0 +1,26 @@
+name: whatsincc
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.9
+  - pip
+  - numpy
+  - pandas
+  - matplotlib
+  - seaborn
+  - jupyter
+  - jupytext
+  - plotly
+  - black
+  - pre-commit
+  - pip:
+    - google-cloud-language
+    - tiktoken
+    - datasets
+    - openai
+    - warcio
+    - beautifulsoup4
+   # install custom package 
+    - -e .
+

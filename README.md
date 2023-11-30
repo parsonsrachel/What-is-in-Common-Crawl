@@ -17,4 +17,45 @@ Presented proposal. Notes we got back
 - try running some of the filtering methods we looked at to see what is left over from filtering and what was filtered out that maybe shouldn't have been
 - won't really have to worry a lot about large data storage because a few thousand is not too large
 
+## Installation
 
+In order to set up the necessary environment:
+
+1. If [conda] is not yet installed, follow the [installation guide] for your operating system.
+   > Note: [miniconda] or [mamba] are faster options
+2. From the projects root directory create the environment with:
+   ```
+   conda env create -f environment.yml
+   ```
+3. Activate the new environment with:
+   ```
+   conda activate whatsincc
+   ```
+   > Note: The environment should always be activated before working on this project
+#### Troubleshoot
+- Make sure to restart your terminal after installing conda. Or run ```source ~/.bashrc```
+- If ```conda activate``` fails, try ```conda init``` and then ```conda activate``` again
+
+
+## Dependency Management & Reproducibility
+
+1. Update environment:
+   ```bash
+   conda env update --file environment.yml --prune
+   ```
+
+2. Create concrete dependencies as `environment.lock.yml` for the exact reproduction of your
+   environment with:
+   ```bash
+   conda env export -n whatsincc -f environment.lock.yml
+   ```
+   For multi-OS development, consider using `--no-builds` during the export.
+3. Update your current environment with respect to a new `environment.lock.yml` using:
+   ```bash
+   conda env update -f environment.lock.yml --prune
+   ```
+
+[conda]: https://docs.conda.io/
+[installation guide]: https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html
+[miniconda]: https://docs.conda.io/en/latest/miniconda.html
+[mamba]: https://mamba.readthedocs.io/en/latest/installation.html#installation
