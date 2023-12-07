@@ -44,9 +44,14 @@ Run scripts from the project directory: ```python3 ./scripts/script_name.py```
 - create_sample_c4_db.py: Creates a sample database of 10,000 random entries of the c4 dataset from huggingface. Columns are: url, timestamp, content, n_tokens (number of tokens of the content). The database is saved as c4_sample inside c4_sample.db stored in the data directory.
 - classify_content_db_writer.py: (Requires Google Cloud account and authentication) classifies the content of each entry in the sample database and stores the result in a seperate column (google_classifier). Classification is done with the Google Cloud NLP API and its Content Classification model. To not have to run this again, the final database with the classifications are also stored on Github to download.
 
+# Description of src Code
+- file_operations.py: Stores functions to download and decompress Common Crawls data files (warc, wet, wat) to fitting directories. These ended up not being used and properly tested due CC being unavailable because of [performance issues]. Like the get_crawl_list script they would be useful for using the original CC data.
+- google_cloud_lang.py: Contains function to classify text in categories by calling the Google Cloud NLP APIs [Content classification model]. (Google Cloud Account required).
 
 [conda]: https://docs.conda.io/
 [installation guide]: https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html
 [miniconda]: https://docs.conda.io/en/latest/miniconda.html
 [mamba]: https://mamba.readthedocs.io/en/latest/installation.html#installation
 [get started page]: https://commoncrawl.org/get-started
+[performance issues]: https://commoncrawl.org/blog/oct-nov-2023-performance-issues
+[Content classification model]: https://cloud.google.com/natural-language/docs/classifying-text
