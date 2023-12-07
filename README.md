@@ -41,8 +41,8 @@ In order to set up the necessary environment:
 # Description of Scripts
 Run scripts from the project directory: ```python3 ./scripts/script_name.py```
 - get_crawl_list.py: Saves the names of all available Common Crawl crawls in a file by scraping the dropdown menu on Common Crawls [get started page] (useful for using the original CC data)
-- create_sample_c4_db.py: Creates a sample database of 10,000 random entries of the c4 dataset from huggingface. Columns are: url, timestamp, content, n_tokens (number of tokens of the content). The database is saved as c4_sample inside c4_sammple.db stored in the data directory.
-- classify_content_db_writer.py: (Requires Google Cloud account and authentication) classifies the content of each entry in the sample database and stores the result in a seperate column (google_classifier). Classification is done with the Google Cloud NLP API and its Content Classification model.
+- create_sample_c4_db.py: Creates a sample database of 10,000 random entries of the c4 dataset from huggingface. Columns are: url, timestamp, content, n_tokens (number of tokens of the content). The database is saved as c4_sample inside c4_sample.db stored in the data directory.
+- classify_content_db_writer.py: (Requires Google Cloud account and authentication) classifies the content of each entry in the sample database and stores the result in a seperate column (google_classifier). Classification is done with the Google Cloud NLP API and its Content Classification model. To not have to run this again, the final database with the classifications are also stored on Github to download.
 
 
 [conda]: https://docs.conda.io/
