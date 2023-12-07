@@ -1,22 +1,6 @@
 # What-is-in-Common-Crawl
 Machine learning project to investigate what types of data exist in Common Crawl
 
-# September 12
-Figured out next steps and what to complete for next class. Started looking at the requirements for the project proposal. Assigned tasks to complete before next class. Add to proposal document with thoughts from literature review. Try querying common crawl to figure out how to use it.
-
-# September 14
-Tried pulling data from Common Crawl, but were not yet successful. Added to the literature review. Allocated proposal paper sections with the intention to be done with a first draft of the proposal by next class. 
-
-# September 19
-Started the proposal presentation and assigned slides. Still need to edit the paper and fix formating. Still have not figured out how to query Common Crawl.
-
-# September 28
-Presented proposal. Notes we got back
-- create a filtering method based on the types of data we see
-- currated datasets already exist so filtering method that filters out all bad data and not just specific types would be good
-- try running some of the filtering methods we looked at to see what is left over from filtering and what was filtered out that maybe shouldn't have been
-- won't really have to worry a lot about large data storage because a few thousand is not too large
-
 ## Installation
 
 In order to set up the necessary environment:
@@ -54,8 +38,15 @@ In order to set up the necessary environment:
    ```bash
    conda env update -f environment.lock.yml --prune
    ```
+# Description of Scripts
+Run scripts from the project directory: ```python3 ./scripts/script_name.py```
+- get_crawl_list.py: Saves the names of all available Common Crawl crawls in a file by scraping the dropdown menu on Common Crawls [get started page] (useful for using the original CC data)
+- create_sample_c4_db.py: Creates a sample database of 10,000 random entries of the c4 dataset from huggingface. Columns are: url, timestamp, content, n_tokens (number of tokens of the content). The database is saved as c4_sample inside c4_sammple.db stored in the data directory.
+- classify_content_db_writer.py: (Requires Google Cloud account and authentication) classifies the content of each entry in the sample database and stores the result in a seperate column (google_classifier). Classification is done with the Google Cloud NLP API and its Content Classification model.
+
 
 [conda]: https://docs.conda.io/
 [installation guide]: https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html
 [miniconda]: https://docs.conda.io/en/latest/miniconda.html
 [mamba]: https://mamba.readthedocs.io/en/latest/installation.html#installation
+[get started page]: 'https://commoncrawl.org/get-started'
