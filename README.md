@@ -49,4 +49,4 @@ Run scripts from the project directory: ```python3 ./scripts/script_name.py```
 [installation guide]: https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html
 [miniconda]: https://docs.conda.io/en/latest/miniconda.html
 [mamba]: https://mamba.readthedocs.io/en/latest/installation.html#installation
-[get started page]: 'https://commoncrawl.org/get-started'
+[get started page]: https://commoncrawl.org/get-started
