@@ -2,6 +2,8 @@ from bs4 import BeautifulSoup
 import requests
 import json
 
+# Script to get a list of all available CommonCrawl crawls (stores the list in the ./data/ directory
+
 # Get html of getting-started page of common crawl,
 # which hosts dropdown menu of all available crawls
 url = 'https://commoncrawl.org/get-started'

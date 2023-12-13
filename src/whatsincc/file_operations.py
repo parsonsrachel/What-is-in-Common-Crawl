@@ -6,6 +6,10 @@ import shutil
 
 
 def download_file(url: str, store_dir: Path, decompress: bool = False) -> Path:
+    """
+    For downloading Common Crawl files.
+    Stores the downloaded file to appropriate folder in the ./data/ directory.
+    """
     local_filename = url.split('/')[-1]  # e.g. "warc.paths.gz"
     local_file_dir = url.split('/')[-2]  # e.g. "CC-MAIN-2013-20"
     local_file_dir_path = Path(f"{store_dir}/{local_file_dir}/")  # e.g. ./data/CC-MAIN-2013-20
@@ -34,7 +38,7 @@ def download_file(url: str, store_dir: Path, decompress: bool = False) -> Path:
     return local_file_path
 
 
-def decompress_gz(gz_path: Path) -> Path:  # TODO: os.pats
+def decompress_gz(gz_path: Path) -> Path:
     """
     Decompresses .gz compressed file. As common crawl hosts only compressed files.
     Saves decompressed file in same path as compressed file.

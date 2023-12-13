@@ -1,12 +1,13 @@
 import sqlite3
 from whatsincc import google_cloud_lang
 
+# Classifies Content in the database and adds column with the output of the classifier
 # Requires Google Cloud Authentication
 
 conn = sqlite3.connect("./data/c4_sample.db")
 c = conn.cursor()
 
-# Add classification column,, if it already exists do nothing
+# Add classification column, if it already exists do nothing
 try:
     c.execute("ALTER TABLE c4_sample ADD COLUMN google_classifier 'text'")
 except:
