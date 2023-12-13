@@ -8,7 +8,6 @@ dependencies:
   - numpy
   - pandas
   - matplotlib
-  - seaborn
   - jupyter
   - jupytext
   - plotly
@@ -16,6 +15,8 @@ dependencies:
   - pre-commit
   - pip:
     - google-cloud-language
+    - pyplexity
+    - pytest
     - tiktoken
     - datasets
     - openai

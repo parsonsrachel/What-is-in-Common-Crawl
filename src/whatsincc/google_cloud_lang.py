@@ -1,7 +1,14 @@
 from google.cloud import language_v1, language_v2
 
-def classify(text, verbose=False):
-    """Classify the input text into categories."""
+
+def classify(text: str, verbose=False):
+    """
+    Classify the input text into categories.
+    Text must be at least 20 words long to be classified, otherwise returns empty dictionary.
+    May classify multiple categories, which are all stored in the output dict alongside their confidence as the values.
+    Further documentation about the classification code can be found on the Google Cloud documentation page:
+    https://cloud.google.com/natural-language/docs/classifying-text#language-classify-content-file-python
+    """
 
     language_client = language_v2.LanguageServiceClient()
 
