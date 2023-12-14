@@ -1,6 +1,6 @@
 import sqlite3
 
-con = sqlite3.connect('c4_sample_2.db')
+con = sqlite3.connect('./data/c4_sample.db')
 cur = con.cursor()
 
 #select all content
