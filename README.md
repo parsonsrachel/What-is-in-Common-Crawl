@@ -43,6 +43,7 @@ Run scripts from the project directory: ```python3 ./scripts/script_name.py```
 - get_crawl_list.py: Saves the names of all available Common Crawl crawls in a file by scraping the dropdown menu on Common Crawls [get started page] (useful for using the original CC data)
 - create_sample_c4_db.py: Creates a sample database of 10,000 random entries of the c4 dataset from huggingface. Columns are: url, timestamp, content, n_tokens (number of tokens of the content). The database is saved as c4_sample inside c4_sample.db stored in the data directory.
 - classify_content_db_writer.py: (Requires Google Cloud account and authentication) classifies the content of each entry in the sample database and stores the result in a seperate column (google_classifier). Classification is done with the Google Cloud NLP API and its Content Classification model. To not have to run this again, the final database with the classifications are also stored on Github to download.
+- add_copyright_info.py: Adds a column to the database that contains information about whether the content is copyrighted. Puts a 1 in the column if the copyright symbol was found, and a zero otherwise.
 
 # Description of src Code
 - file_operations.py: Stores functions to download and decompress Common Crawls data files (warc, wet, wat) to fitting directories. These ended up not being used and properly tested due CC being unavailable because of [performance issues]. Like the get_crawl_list script they would be useful for using the original CC data.
