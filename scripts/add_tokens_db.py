@@ -1,6 +1,8 @@
 import sqlite3
 import tiktoken
 
+# Calculates the number of tokens in content in the database and adds column with the number of tokens
+
 encoding = tiktoken.encoding_for_model('gpt-3.5-turbo')
 
 con = sqlite3.connect("./data/c4_sample.db")
@@ -11,13 +13,16 @@ if continue_prompt != "y":
 	print("Abort.")
 	quit()
 
+# Drop n_tokens column, if it does not exists do nothing
 try:
     cur.execute("ALTER TABLE c4_sample DROP COLUMN n_tokens")
 except:
      print("Column does not exist")
 
+# Add n_tokens column
 cur.execute("ALTER TABLE c4_sample ADD COLUMN n_tokens INTEGER")
 
+# Fetch all rows in database
 cur.execute("SELECT url, timestamp, content FROM c4_sample")
 rows = cur.fetchall()
 
